@@ -10,16 +10,29 @@ const ingredients = [
 // ingredients создаст отдельный li, 
 // после чего вставит все li за одну операцию в список ul.ingredients. 
 // Для создания DOM-узлов используй document.createElement().
+
 const listElementContainer = document.querySelector('ul');
 console.log(listElementContainer);
 
-const makelistElementContainer = ingredients => {
-    return ingredients.map(ingredient => {
-      const listEl = document.createElement('li');
-      li.textContent = ingredient[i];
-      return listEl;
-    });
-  };
+const elements =[];
+for (let i=0; i<ingredients.length; i+=1) {
+  const ingredient = ingredients[i];
+  const liEl = document.createElement('li');
+  liEl.textContent = ingredients[i];
+  elements.push(liEl);
+}
 
-const elements = makelistElementContainer(ingredients);
+console.log(elements);
 listElementContainer.append(...elements);
+
+
+// const makelistElementContainer = ingredients => {
+//     return ingredients.map(ingredient => {
+//       const liEl = document.createElement('li');
+//       liEl.textContent = ingredient.textContent;
+//       return liEl;
+//     });
+//   };
+
+// const elements = makelistElementContainer(ingredients);
+// listElementContainer.append(...elements);

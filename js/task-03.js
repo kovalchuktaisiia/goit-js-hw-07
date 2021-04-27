@@ -23,15 +23,15 @@ const images = [
 ];
 
 
-const ol = document.createElement('ol');
+const ul = document.createElement('ul');
 images.forEach(src => {
     const li = document.createElement('li');
     const image = document.createElement('img');
     li.appendChild(image);
-    ol.appendChild(li);
+    ul.appendChild(li);
 
     image.setAttribute('src', src);
     image.setAttribute('alt', 'random image');
 });
 
-document.body.insertBefore(ol, document.body.childNodes[0]);
+document.body.insertBefore(ul, document.body.childNodes[0]);
