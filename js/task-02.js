@@ -26,7 +26,7 @@ console.log(elements);
 listElementContainer.append(...elements);
 
 
-// const makelistElementContainer = ingredients => {
+// const makeListElementContainer = ingredients => {
 //     return ingredients.map(ingredient => {
 //       const liEl = document.createElement('li');
 //       liEl.textContent = ingredient.textContent;
@@ -34,5 +34,5 @@ listElementContainer.append(...elements);
 //     });
 //   };
 
-// const elements = makelistElementContainer(ingredients);
+// const elements = makeListElementContainer(ingredients);
 // listElementContainer.append(...elements);
