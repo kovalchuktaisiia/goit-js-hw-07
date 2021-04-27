@@ -23,15 +23,50 @@ const images = [
 ];
 
 
-const ul = document.createElement('ul');
-images.forEach(src => {
-    const li = document.createElement('li');
-    const image = document.createElement('img');
-    li.appendChild(image);
-    ul.appendChild(li);
+// const ul = document.createElement('ul');
+// images.forEach(src => {
+//     const li = document.createElement('li');
+//     const image = document.createElement('img');
+//     li.appendChild(image);
+//     ul.appendChild(li);
 
-    image.setAttribute('src', src);
-    image.setAttribute('alt', 'random image');
-});
+//     image.setAttribute('src', src);
+//     image.setAttribute('alt', 'random image');
+// });
 
-document.body.insertBefore(ul, document.body.childNodes[0]);
+// document.body.insertBefore(ul, document.body.childNodes[0]);
+
+const listElementContainer = document.querySelector('ul');
+console.log(listElementContainer);
+
+
+// images.forEach(src => {
+//     const li = document.createElement('li');
+//     const image = document.createElement('img');
+
+//     image.setAttribute('src', src);
+//     image.setAttribute('alt', 'random image');
+
+//     li.appendChild(image);
+//     listElementContainer.appendChild(li);
+
+// });
+
+
+
+const elements =[];
+for (let i=0; i<images.length; i+=1) {
+  const image = images[i];
+
+  const imageEl = document.createElement('img');
+  const liEl = document.createElement('li');
+  
+  imageEl.src = image.url;
+  imageEl.alt = image.alt;
+  imageEl.width = 260;
+  liEl.append(imageEl);
+  elements.push(liEl);
+}
+
+console.log(elements);
+listElementContainer.append(...elements);
