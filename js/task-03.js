@@ -52,7 +52,7 @@ console.log(listElementContainer);
 
 // });
 
-////// 2 ///////
+// *******  2 
 
 // const elements =[];
 // for (let i=0; i<images.length; i+=1) {
@@ -73,20 +73,44 @@ console.log(listElementContainer);
 
 
 
-////// 3 ///////
+// ******* 3 
 
-const makeListElementContainer = images => {
-  return images.map ( image =>{
-    const imageEl = document.createElement('img');
-  const liEl = document.createElement('li');
+// const makeListElementContainer = images => {
+//   return images.map ( image =>{
+//     const imageEl = document.createElement('img');
+//   const liEl = document.createElement('li');
   
-  imageEl.src = image.url;
-  imageEl.alt = image.alt;
+//   imageEl.src = image.url;
+//   imageEl.alt = image.alt;
+//   imageEl.width = 260;
+//   liEl.append(imageEl);
+
+//   return liEl;
+//   })
+// };
+// const elements = makeListElementContainer (images);
+// listElementContainer.append (...elements);
+
+
+//******* 4
+
+
+const makeProductCard = ({ url, alt }) => {
+  const imageEl = document.createElement('img');
+  imageEl.src = url;
+  imageEl.alt = alt;
   imageEl.width = 260;
-  liEl.append(imageEl);
+
+  const imageDesc = document.createElement('p');
+  imageDesc.textContent = `Картинка: ${alt}`
+
+  const liEl = document.createElement('li');
+  liEl.append(imageEl,imageDesc);
 
   return liEl;
-  })
 };
-const elements = makeListElementContainer (images);
-listElementContainer.append (...elements);
+
+const elements = images.map(makeProductCard);
+
+console.log(elements);
+listElementContainer.append(...elements);
