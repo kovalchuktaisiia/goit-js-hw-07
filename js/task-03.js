@@ -52,21 +52,41 @@ console.log(listElementContainer);
 
 // });
 
+////// 2 ///////
+
+// const elements =[];
+// for (let i=0; i<images.length; i+=1) {
+//   const image = images[i];
+
+//   const imageEl = document.createElement('img');
+//   const liEl = document.createElement('li');
+  
+//   imageEl.src = image.url;
+//   imageEl.alt = image.alt;
+//   imageEl.width = 260;
+//   liEl.append(imageEl);
+//   elements.push(liEl);
+// }
+
+// console.log(elements);
+// listElementContainer.append(...elements);
 
 
-const elements =[];
-for (let i=0; i<images.length; i+=1) {
-  const image = images[i];
 
-  const imageEl = document.createElement('img');
+////// 3 ///////
+
+const makeListElementContainer = images => {
+  return images.map ( image =>{
+    const imageEl = document.createElement('img');
   const liEl = document.createElement('li');
   
   imageEl.src = image.url;
   imageEl.alt = image.alt;
   imageEl.width = 260;
   liEl.append(imageEl);
-  elements.push(liEl);
-}
 
-console.log(elements);
-listElementContainer.append(...elements);
+  return liEl;
+  })
+};
+const elements = makeListElementContainer (images);
+listElementContainer.append (...elements);
