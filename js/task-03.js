@@ -23,18 +23,7 @@ const images = [
 ];
 
 
-// const ul = document.createElement('ul');
-// images.forEach(src => {
-//     const li = document.createElement('li');
-//     const image = document.createElement('img');
-//     li.appendChild(image);
-//     ul.appendChild(li);
 
-//     image.setAttribute('src', src);
-//     image.setAttribute('alt', 'random image');
-// });
-
-// document.body.insertBefore(ul, document.body.childNodes[0]);
 
 const listElementContainer = document.querySelector('ul');
 console.log(listElementContainer);
@@ -95,22 +84,45 @@ console.log(listElementContainer);
 //******* 4
 
 
+// const makeProductCard = ({ url, alt }) => {
+//   const imageEl = document.createElement('img');
+//   imageEl.src = url;
+//   imageEl.alt = alt;
+//   imageEl.width = 260;
+
+//   const imageDesc = document.createElement('p');
+//   imageDesc.textContent = `Картинка: ${alt}`
+
+//   const liEl = document.createElement('li');
+//   liEl.append(imageEl,imageDesc);
+
+//   return liEl;
+// };
+
+// const elements = images.map(makeProductCard);
+
+// console.log(elements);
+// listElementContainer.append(...elements);
+
+
+// ********* 1
+
+// const listElementContainer = document.querySelector('ul');
+// console.log(listElementContainer);
+
 const makeProductCard = ({ url, alt }) => {
-  const imageEl = document.createElement('img');
-  imageEl.src = url;
-  imageEl.alt = alt;
-  imageEl.width = 260;
-
-  const imageDesc = document.createElement('p');
-  imageDesc.textContent = `Картинка: ${alt}`
-
-  const liEl = document.createElement('li');
-  liEl.append(imageEl,imageDesc);
-
-  return liEl;
+  return `
+  <li>
+    <img class = picture src='${url}' alt ='${alt}' />
+  </li>
+    `;
 };
+ 
+const makeProductList = images
+  .map(makeProductCard)
+  .join('');
 
-const elements = images.map(makeProductCard);
+listElementContainer.insertAdjacentHTML('beforeend', makeProductList);
+console.log(makeProductList);
 
-console.log(elements);
-listElementContainer.append(...elements);
+  
