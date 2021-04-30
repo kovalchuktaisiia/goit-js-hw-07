@@ -10,23 +10,28 @@
   <button type="button" data-action="increment">+1</button>
 </div> */}
 
-const wrap_button = {
+const counter = {
   sub: document.querySelector("[data-action='increment']"),
   add: document.querySelector("[data-action='decrement']"),
   span: document.querySelector('#value'),
-  wrapper: document.querySelector('#counter '),
+  wrapper: document.querySelector('#counter'),
 };
+
+console.log(counter);
+
 let counterValue = 0;
+
 const increment = () => {
   counterValue += 1;
-
   document.getElementById('value').textContent = counterValue;
 };
+
+console.log(increment);
 
 const decrement = () => {
   counterValue -= 1;
-
   document.getElementById('value').textContent = counterValue;
 };
-wrap_button.sub.addEventListener('click', increment);
-wrap_button.add.addEventListener('click', decrement);
+
+counter.sub.addEventListener('click', increment);
+counter.add.addEventListener('click', decrement);
