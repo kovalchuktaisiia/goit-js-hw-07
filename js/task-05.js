@@ -7,7 +7,7 @@
 
 
 const refs = {
-    input: document.querySelector('input'),
+    input: document.querySelector('#name-input'),
     nameOutput: document.querySelector('h1 > span'),
  };
    console.log(refs);

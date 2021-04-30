@@ -1,4 +1,5 @@
-// Напиши скрипт, который бы при потере фокуса на инпуте, проверял его содержимое на правильное количество символов.
+// Напиши скрипт, который бы при потере фокуса на инпуте, проверял его содержимое на 
+//правильное количество символов.
 
 // <input
 //   type="text"
@@ -12,29 +13,30 @@
 
 
 const refs = {
-    input: document.querySelector('input'),
+    input: document.querySelector('#validation-input'),
+    length: document.querySelector('[data-action="data-length"]'),
+    placeholder: document.querySelector('[data-action="placeholder"]'),
    
  };
    console.log(refs);
+ 
 
-//    refs.input.addEventListener('focus', onInputFocus);
-//    refs.input.addEventListener('blur', onInputBlur);
+   // refs.input.addEventListener('focus', onInputFocus);
+    refs.input.addEventListener('blur', onInputBlur);
  
   function onInputFocus() {
     console.log('Инпут получил фокус - событие focus');
   }
   
   function onInputBlur() {
-    console.log('Инпут потерял фокус - событие blur');
-    
-  }
+   // console.log('Инпут потерял фокус - событие blur');
+    console.log(this.value.length);
 
-  function onInputEnter(event) {
-    input.len
-    box.classList.add('box--active');
-  }
-  
-  function onInputEnter(event) {
-    const box = event.currentTarget;
-    box.classList.remove('box--active');
+    if (this.getAttribute('data-length') === this.value.length) { 
+      this.classList.remove('valid');
+      this.classList.add('invalid');
+    } else {
+      this.classList.remove('invalid');
+      this.classList.add('valid');
+    }
   }
