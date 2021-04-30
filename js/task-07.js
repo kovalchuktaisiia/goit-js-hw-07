@@ -12,9 +12,9 @@ const refs = {
     text: document.querySelector('#text')  
  };
  
-    refs.input.addEventListener('input', onControlerInput);
+refs.input.addEventListener('input', onControlerInput);
     
-  function onControlerInput(event) {
+function onControlerInput(event) {
     console.log('Инпут получил фокус - событие focus');
     text.style.fontSize = event.currentTarget.value + "px";
   }
