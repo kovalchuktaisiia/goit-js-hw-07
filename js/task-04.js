@@ -26,7 +26,7 @@ const increment = () => {
   document.getElementById('value').textContent = counterValue;
 };
 
-console.log(increment);
+//console.log(increment);
 
 const decrement = () => {
   counterValue -= 1;
