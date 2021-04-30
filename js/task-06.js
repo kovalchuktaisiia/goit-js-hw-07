@@ -10,14 +10,31 @@
 // Если введено подходящее количество, то border инпута становится зеленым, если неправильное - красным.
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
-// #validation-input {
-//   border: 3px solid #bdbdbd;
-// }
 
-// #validation-input.valid {
-//   border-color: #4caf50;
-// }
+const refs = {
+    input: document.querySelector('input'),
+   
+ };
+   console.log(refs);
 
-// #validation-input.invalid {
-//   border-color: #f44336;
-// }
+//    refs.input.addEventListener('focus', onInputFocus);
+//    refs.input.addEventListener('blur', onInputBlur);
+ 
+  function onInputFocus() {
+    console.log('Инпут получил фокус - событие focus');
+  }
+  
+  function onInputBlur() {
+    console.log('Инпут потерял фокус - событие blur');
+    
+  }
+
+  function onInputEnter(event) {
+    input.len
+    box.classList.add('box--active');
+  }
+  
+  function onInputEnter(event) {
+    const box = event.currentTarget;
+    box.classList.remove('box--active');
+  }
