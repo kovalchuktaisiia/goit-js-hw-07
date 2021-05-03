@@ -14,15 +14,14 @@
 
 const refs = {
     input: document.querySelector('#validation-input'),
-    length: document.querySelector('[data-action="data-length"]'),
+    number: document.querySelector('[data-action="data-length"]'),
     placeholder: document.querySelector('[data-action="placeholder"]'),
-   
+    active: document.querySelector('.active'),   
  };
    console.log(refs);
  
-
    // refs.input.addEventListener('focus', onInputFocus);
-    refs.input.addEventListener('blur', onInputBlur);
+  refs.input.addEventListener('blur', onInputBlur);
  
   function onInputFocus() {
     console.log('Инпут получил фокус - событие focus');
@@ -31,12 +30,14 @@ const refs = {
   function onInputBlur() {
    // console.log('Инпут потерял фокус - событие blur');
     console.log(this.value.length);
-
-    if (this.getAttribute('data-length') === this.value.length) { 
+    console.log(this.getAttribute('data-length'));
+    
+    if (this.getAttribute('data-length') > this.value.length) { 
       this.classList.remove('valid');
       this.classList.add('invalid');
     } else {
       this.classList.remove('invalid');
       this.classList.add('valid');
     }
+    
   }

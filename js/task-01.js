@@ -3,16 +3,16 @@
 const navEl = document.querySelector('ul');
 //console.log(navEl);
 
-const CategElements = navEl.querySelectorAll('.item');
+const categElements = navEl.querySelectorAll('.item');
 //console.log(CategElements);
-console.log(`В списке ${CategElements.length} категори`);
+console.log(`В списке ${categElements.length} категори`);
 
-const CategElement = document.querySelector('li.item');
-//console.log(`Категория: ${CategElement.firstElementChild.textContent}`);
+const categElement = document.querySelector('li.item');
+//console.log(`Категория: ${categElement.firstElementChild.textContent}`);
 
-const CategElementList = CategElement.lastElementChild;
-//console.log(`Количество элементов: ${CategElementList.children.length}`);
+const categElementList = categElement.lastElementChild;
+//console.log(`Количество элементов: ${categElementList.children.length}`);
 
- CategElements.forEach ((CategElement) => 
- console.log(`Категория: ${CategElement.firstElementChild.textContent}, 
-Количество элементов: ${CategElement.lastElementChild.children.length}`));
+ categElements.forEach ((categElement) => 
+ console.log(`Категория: ${categElement.firstElementChild.textContent}, 
+Количество элементов: ${categElement.lastElementChild.children.length}`));

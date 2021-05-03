@@ -24,6 +24,7 @@ const refs = {
   }
 
   refs.input.addEventListener('input', onInputChange);
+  refs.nameOutput.textContent='';
 
   function onInputChange(event) {
     refs.nameOutput.textContent = event.currentTarget.value;

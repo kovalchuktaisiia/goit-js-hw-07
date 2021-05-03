@@ -11,7 +11,7 @@ const ingredients = [
 // после чего вставит все li за одну операцию в список ul.ingredients. 
 // Для создания DOM-узлов используй document.createElement().
 
-const listElementContainer = document.querySelector('ul');
+const listElementContainer = document.querySelector('#ingredients');
 console.log(listElementContainer);
 
 const elements =[];
