@@ -32,12 +32,19 @@ const refs = {
     console.log(this.value.length);
     console.log(this.getAttribute('data-length'));
     
-    if (this.getAttribute('data-length') > this.value.length) { 
-      this.classList.remove('valid');
-      this.classList.add('invalid');
-    } else {
-      this.classList.remove('invalid');
+    if (this.getAttribute('data-length') === this.value.length) { 
       this.classList.add('valid');
-    }
+        } else {
+      this.classList.add('invalid');
+        }
+
+
+    // if (this.getAttribute('data-length') > this.value.length) { 
+    //   this.classList.remove('valid');
+    //   this.classList.add('invalid');
+    // } else {
+    //   this.classList.remove('invalid');
+    //   this.classList.add('valid');
+    // }
     
   }

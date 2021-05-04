@@ -24,7 +24,7 @@ const refs = {
   }
 
   refs.input.addEventListener('input', onInputChange);
-  refs.nameOutput.textContent='';
+  refs.nameOutput.textContent='Незнакомец';
 
   function onInputChange(event) {
     refs.nameOutput.textContent = event.currentTarget.value;
