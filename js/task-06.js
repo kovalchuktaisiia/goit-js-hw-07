@@ -14,9 +14,9 @@
 
 const refs = {
     input: document.querySelector('#validation-input'),
-    number: document.querySelector('[data-action="data-length"]'),
-   // placeholder: document.querySelector('[data-action="placeholder"]'),
-    //active: document.querySelector('.active'),   
+    number:parseInt (document.querySelector('#validation-input').dataset.length,)
+    //number: document.querySelector('[data-action="data-length"]'),
+   
  };
    console.log(refs);
  
@@ -27,20 +27,36 @@ const refs = {
     console.log('Инпут получил фокус - событие focus');
   }
   
-  function onInputBlur() {
-   // console.log('Инпут потерял фокус - событие blur');
-    console.log(this.value.length);
-    console.log(this.getAttribute('data-length'));
-    
-    if (this.getAttribute('data-length') === this.value.length) { 
-      this.classList.remove('valid');
-      this.classList.add('invalid');
-    } else {
-      this.classList.remove('invalid');
-      this.classList.add('valid');
+  function onInputBlur (){
+    const limitLength = refs.number;
+    let value = refs.input.value.length;
+
+    if (value !==limitLength){
+      refs.input.classList.add ('invalid');
+      refs.input.classList.remove ('valid');
+      return;
     }
-    
+    refs.input.classList.add ('valid');
+    refs.input.classList.remove ('invalid');
+
   }
+
+
+
+  // function onInputBlur() {
+  //  // console.log('Инпут потерял фокус - событие blur');
+  //   console.log(this.value.length);
+  //   console.log(this.getAttribute('data-length'));
+    
+  //   if (this.getAttribute('data-length') === this.value.length) { 
+  //     this.classList.remove('valid');
+  //     this.classList.add('invalid');
+  //   } else {
+  //     this.classList.remove('invalid');
+  //     this.classList.add('valid');
+  //   }
+    
+  // }
 
 //   const inputEl = document.getElementById('validation-input');
 // inputEl.addEventListener('change', el => {
