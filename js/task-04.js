@@ -23,14 +23,14 @@ let counterValue = 0;
 
 const increment = () => {
   counterValue += 1;
-  document.getElementById('value').textContent = counterValue;
+  refs.span.textContent = counterValue;
 };
 
 //console.log(increment);
 
 const decrement = () => {
   counterValue -= 1;
-  document.getElementById('value').textContent = counterValue;
+  refs.span.textContent = counterValue;
 };
 
 refs.sub.addEventListener('click', increment);

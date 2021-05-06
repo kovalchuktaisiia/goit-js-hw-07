@@ -15,8 +15,8 @@
 const refs = {
     input: document.querySelector('#validation-input'),
     number: document.querySelector('[data-action="data-length"]'),
-    placeholder: document.querySelector('[data-action="placeholder"]'),
-    active: document.querySelector('.active'),   
+   // placeholder: document.querySelector('[data-action="placeholder"]'),
+    //active: document.querySelector('.active'),   
  };
    console.log(refs);
  
@@ -33,18 +33,22 @@ const refs = {
     console.log(this.getAttribute('data-length'));
     
     if (this.getAttribute('data-length') === this.value.length) { 
-      this.classList.add('valid');
-        } else {
+      this.classList.remove('valid');
       this.classList.add('invalid');
-        }
-
-
-    // if (this.getAttribute('data-length') > this.value.length) { 
-    //   this.classList.remove('valid');
-    //   this.classList.add('invalid');
-    // } else {
-    //   this.classList.remove('invalid');
-    //   this.classList.add('valid');
-    // }
+    } else {
+      this.classList.remove('invalid');
+      this.classList.add('valid');
+    }
     
   }
+
+//   const inputEl = document.getElementById('validation-input');
+// inputEl.addEventListener('change', el => {
+//     if (el.target.value.length === +inputEl.dataset.length) {
+//     inputEl.classList.add('valid');
+//     inputEl.classList.remove('invalid');
+//   } else {
+//     inputEl.classList.remove('valid');
+//     inputEl.classList.add('invalid');
+//   }
+// });

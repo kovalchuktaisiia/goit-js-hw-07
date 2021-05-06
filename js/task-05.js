@@ -24,9 +24,12 @@ const refs = {
   }
 
   refs.input.addEventListener('input', onInputChange);
-  refs.nameOutput.textContent='Незнакомец';
-
-  function onInputChange(event) {
-    refs.nameOutput.textContent = event.currentTarget.value;
-  }
+   // refs.nameOutput.textContent='Незнакомец';
+  // function onInputChange(event) {
+  //   refs.nameOutput.textContent = event.currentTarget.value;
+  // }
   
+function onInputChange () {
+  let name = refs.input.value;
+  refs.nameOutput.textContent = name.length > 0 ? name: 'Незнакомец';
+}
