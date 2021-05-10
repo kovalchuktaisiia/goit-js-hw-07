@@ -29,7 +29,7 @@ console.log(listElementContainer);
 const makeListElementContainer = ingredients => {
     return ingredients.map(ingredient => {
       const liEl = document.createElement('li');
-      liEl.textContent = ingredient.textContent;
+      liEl.textContent = ingredient;
       return liEl;
     });
   };
